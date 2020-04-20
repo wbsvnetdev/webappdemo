@@ -28,7 +28,7 @@ webappdemo          latest              cda556b7a0fb        20 seconds ago      
 
 
 ```sh
-docker run -d -e ENVAPP=STAGING p 80:3030 webappdemo:latest
+docker run -d -e ENVAPP=STAGING -p 80:3030 webappdemo:latest
 ```
 
 ### Check that the container is running
