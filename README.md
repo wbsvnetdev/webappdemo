@@ -4,8 +4,7 @@ This simple nodejs app can be used for demo purpose.
 
 - **Pre-requisites**
 - Docker installed
-- Get an API Key from https://ipgeolocation.io/ (sign up and generate a new api key)
-- Get an API Key from https://account.mapbox.com/auth/signup/ (sign up and generate a new api key)
+
 
 ### Build the docker the image from the Dockerfile
 ```sh
@@ -26,14 +25,10 @@ webappdemo          latest              cda556b7a0fb        20 seconds ago      
 ### Run your docker container based on the image 
 - The environnement variable ENVAPP can have 2 values "STAGING" or "PRODUCTION" (if not defined it should display "UNKNOWN ENVIRONNEMENT" on the web application home page)
 - By default the port on the container is listening on port "3030" and on "80" on the host
-- Replace the value of API_KEY_IPGEO 
-- Replace the value of API_KEY_MAPBOX
+
 
 ```sh
-docker run -d -e ENVAPP=STAGING \
--e API_KEY_IPGEO=bxxxxxx \
--e API_KEY_MAPBOX=pk.eyJ1Ijxxxxxxxxx \
--p 80:3030 webappdemo:latest
+docker run -d -e ENVAPP=STAGING p 80:3030 webappdemo:latest
 ```
 
 ### Check that the container is running
@@ -53,4 +48,3 @@ afbb83a222cb        webappdemo:latest   "docker-entrypoint.s…"   5 seconds ago
 http://server_ip_address
 
 
-![](https://github.com/wbsvnetdev/webdemo/blob/master/webappdemo.PNG)
